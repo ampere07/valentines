@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCash Receipt</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: blue;
+            font-family: Arial, sans-serif;
+        }
+        .receipt {
+            width: 90%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .receipt-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            font-weight: bold;
+        }
+        .details {
+            padding: 15px;
+            text-align: left;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .amount {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .claim-btn {
+            display: block;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            width: 70%;
+            max-width: 350px; /* Smaller modal */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .modal-header {
+            font-size: 1.2em; /* Smaller font size */
+            font-weight: bold;
+            margin-bottom: 8px;
+            border-bottom: 1.5px solid black;
+            padding-bottom: 5px;
+        }
+        .modal-message {
+            font-size: 0.9em; /* Smaller text */
+            margin: 10px 0;
+            text-align: justify;
+            line-height: 1.4;
+        }
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="receipt-header">✔ A••••a M.</div>
+        <div class="details">
+            <p><strong>Althea M.</strong> 992 431 3554</p>
+            <p>Receive via GCash</p>
+            <hr>
+            <p>Amount:</p>
+            <p class="amount">₱1,000,000.00</p>
+            <hr>
+            <p>Total Amount Received:</p>
+            <p class="amount">₱1,000,000.00</p>
+            <hr>
+            <p>Ref No.: 1l0V3Yu0B4BY</p>
+            <p>Feb 4, 2025</p>
+        </div>
+        <button class="claim-btn" onclick="showModal()">Claim</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header">Official Receipt</div>
+            <div class="modal-message">
+                <p>Dear <strong>Althea M.</strong>,</p>
+                <p>Sa darating na Araw ng mga Puso,<br>
+                   Gusto kitang makasama, kahit sandali lang,<br>
+                    Dahil ang ngiti mo'y parang araw,<br>
+                    Nagbibigay liwanag sa madilim kong daigdig.<br>
+                    <br>
+                    Huwag kang mag-alala, wala akong rosas,<br>
+                    Pero dala ko ang pusong tapat at wagas.<br>
+                    Ang pag-ibig ko'y parang hangin,<br>
+                    Di mo man makita, pero damang-dama mo.<br>
+                    <br>
+                    Tara, maglakad tayo sa ilalim ng buwan,<br>
+                    Ipapaalala ko sa ‘yo kung gaano ka kahalaga.<br>
+                    Dahil ang ikaw at ako'y parang tala,<br>
+                    Magkasama, kahit sa malawak na kalawakan.<br>
+                    
+                    Kaya, sa espesyal na araw na ito,<br>
+                    Payag ka bang samahan ako?<br>
+                    Dahil ang puso kong ito'y parang kandila,<br>
+                    Handang magliwanag para sa iyo, mahal ko.</p><br>
+                    <strong>sa messenger ang sagot o kaya sa call</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById("receiptModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("receiptModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
